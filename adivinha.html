@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Adivinha</title>
+	</head>
+
+	<body>
+		<input/>
+		<button>Compare com o meu segredo</button>
+	</body>
+</html>
+
+<script>
+	
+	var segredos = sorteiaNumeros(5);
+	console.log(segredos);
+
+	var input = document.querySelector("input");;
+	input.focus();
+
+	var button = document.querySelector("button");
+	button.onclick = verifica;
+
+	segredos.lo
+
+	function verifica(){
+
+		var achou = false;
+		for(var i = 0; i < segredos.length; i++){
+
+			if(input.value == segredos[i]){
+
+				alert("Você ACERTOU!");
+				achou = true;
+				break;
+
+			}
+		}
+
+		if(!achou){
+			alert("Você ERROU!");
+		}
+
+		input.value = "";
+		input.focus();
+	}
+
+	function sorteia(limite){
+		return Math.round(Math.random() * limite);
+	}
+
+	function sorteiaNumeros(tamanho){
+		var segredos = [];
+
+		for(var i = 0; i < tamanho; ){
+
+			var numero = sorteia(10)
+			var achou = false;
+
+			for(var i = 0; i < segredos.length; i++){
+
+				if(segredos[i] == numero){
+
+					achou = true;
+					break;
+
+				}
+
+			}
+
+			if(achou == false){
+				segredos.push(numero);
+				i++;
+			}
+		}
+
+		return segredos;
+	}
+
+	
+
+</script>
